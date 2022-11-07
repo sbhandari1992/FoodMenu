@@ -18,13 +18,13 @@ let menu = {
 
 let foodMenu = document.getElementById('foodMenu');
 
-let objectArray = [];
+let menuCategoryLists = [];
 let keyArray = Object.keys(menu);
 
 for (items in menu) {
    let theOption = new Option(items);
    foodMenu.appendChild(theOption); 
-   objectArray.push(menu[items]);
+   menuCategoryLists.push(menu[items]);
 }
 
 foodMenu.onchange = getItems;
@@ -32,7 +32,7 @@ foodMenu.onchange = getItems;
 function getItems() {
    for (let i = 0; i < keyArray.length; i++) {
       if (foodMenu.value == keyArray[i]) {
-         console.log(`You have options to choose: ${objectArray[i]}`);
+         console.log(`You have options to choose: ${menuCategoryLists[i]}`);
       }
    }
 }
